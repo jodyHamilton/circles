@@ -1,0 +1,13 @@
+#circles {
+  position: relative;	
+}
+
+.circle {
+	border-radius: 50%;
+	height: 200px;
+	width: 200px;
+	background-color: red;
+	box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.75),
+	inset -5px -5px 1px rgba(0,0,0,0.5); /*top internal highlight*/
+	position: absolute;
+}
