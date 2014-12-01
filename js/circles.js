@@ -10,7 +10,16 @@ $(function() {
 function addRandomCircle() {
   var styles = getRandomStyles();
   $("#circles").append("<div class='circle' style='"+styles+"'></div>");
-  $(".circle").draggable();
+  // The circles can be dragged onto other circles, swapping horizontal positions.
+  $(".circle").draggable({revert: "invalid", stack: ".circle", start: function(event, ui) {
+      // Keep track of the starting position.
+      ui.helper.data('horizontalOffset', ui.helper.css('left')).data('verticalOffset', ui.helper.css('top'));
+    }})
+    .droppable({accept: ".circle", drop: function(event, ui) {
+      // Swap horizontal but preserve vertical positions.
+      $(this).css('left', ui.draggable.data('horizontalOffset'));
+      ui.draggable.css('left', $(this).css('left')).css('top', ui.draggable.data('verticalOffset'));
+  }});
 }
 
 function getRandomStyles() {
@@ -22,7 +31,6 @@ function getRandomStyles() {
   var size = sizes[Math.floor(Math.random()*sizes.length)];
   var verticalOffset = (200 - size)/2;
   var styles = "left:"+horizontalOffset+"px;background-color:"+color+";top:"+verticalOffset+"px;width:"+size+"px;height:"+size+"px;";
-  console.log(styles);
   return styles;
 }
 
