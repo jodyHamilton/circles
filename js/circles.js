@@ -1,11 +1,10 @@
 $(function() {
-  $("body").click(function() {
-    addRandomCircle();
-  });
-  $(".circle").draggable();
-  $( "#black-hole").droppable({accept: ".circle", drop: function(event, ui) {
+  $("#black-hole").droppable({accept: ".circle", drop: function(event, ui) {
     ui.draggable.remove();
   }});
+  $("#creation").click(function() {
+    addRandomCircle();
+  });
 });
 
 function addRandomCircle() {

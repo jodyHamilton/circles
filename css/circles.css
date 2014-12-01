@@ -5,19 +5,78 @@
 
 .circle {
 	border-radius: 50%;
-	height: 200px;
-	width: 200px;
-	background-color: red;
 	box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.75),
-	inset -5px -5px 1px rgba(0,0,0,0.5); /*top internal highlight*/
+	inset -5px -5px 1px rgba(0,0,0,0.5);
 	position: absolute;
 	cursor: pointer;
 }
 
 #black-hole {
-  margin: 50px auto 0 auto;
+  margin: 50px auto 0;
 	border-radius: 50%;
   height: 100px;
   width: 100px;
   background-color: black;
+}
+
+#creation {
+  margin: 50px;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  background-color: white;
+  float: left;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+}
+
+#creation div {
+  border-radius: 50%;
+  height: 33px;
+  width: 33px;
+  position: absolute;
+  background: white;
+}
+
+#creation div:nth-child(1) {
+  left: 33px;
+  top: 0;
+  background: #d10000;
+}
+
+#creation div:nth-child(2) {
+  left: 33px;
+  top: 33px;
+  background: #ff6622;
+}
+
+#creation div:nth-child(3) {
+  left: 33px;
+  top: 66px;
+  background: #ffda21;
+}
+
+#creation div:nth-child(4) {
+  left: 5px;
+  top: 16px;
+  background: #33dd00;
+}
+
+#creation div:nth-child(5) {
+  left: 4px;
+  top: 49px;
+  background: #1133cc;
+}
+
+#creation div:nth-child(6) {
+  left: 62px;
+  top: 16px;
+  background: #220066;
+}
+
+#creation div:nth-child(7) {
+  left: 62px;
+  top: 49px;
+  background: #330044;
 }
