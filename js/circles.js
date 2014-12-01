@@ -16,9 +16,10 @@ function addRandomCircle() {
       ui.helper.data('horizontalOffset', ui.helper.css('left')).data('verticalOffset', ui.helper.css('top'));
     }})
     .droppable({accept: ".circle", drop: function(event, ui) {
-      // Swap horizontal but preserve vertical positions.
-      $(this).css('left', ui.draggable.data('horizontalOffset'));
-      ui.draggable.css('left', $(this).css('left')).css('top', ui.draggable.data('verticalOffset'));
+      var offsetA = ui.draggable.data('horizontalOffset');
+      var offsetB = $(this).css('left');
+      $(this).css('left', offsetA);
+      ui.draggable.css('left', offsetB).css('top', ui.draggable.data('verticalOffset'));
   }});
 }
 
