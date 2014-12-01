@@ -2,11 +2,16 @@ $(function() {
   $("body").click(function() {
     addRandomCircle();
   });
+  $(".circle").draggable();
+  $( "#black-hole").droppable({accept: ".circle", drop: function(event, ui) {
+    ui.draggable.remove();
+  }});
 });
 
 function addRandomCircle() {
   var styles = getRandomStyles();
   $("#circles").append("<div class='circle' style='"+styles+"'></div>");
+  $(".circle").draggable();
 }
 
 function getRandomStyles() {
@@ -26,3 +31,4 @@ function getRandomColor() {
   var colors = ['#d10000', '#ff6622', '#ffda21', '#33dd00', '#1133cc', '#220066', '#330044'];
   return colors[Math.floor(Math.random()*colors.length)];
 }
+

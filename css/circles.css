@@ -1,5 +1,6 @@
 #circles {
   position: relative;	
+  height: 200px;
 }
 
 .circle {
@@ -11,4 +12,12 @@
 	inset -5px -5px 1px rgba(0,0,0,0.5); /*top internal highlight*/
 	position: absolute;
 	cursor: pointer;
+}
+
+#black-hole {
+  margin: 50px auto 0 auto;
+	border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  background-color: black;
 }
